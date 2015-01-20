@@ -4,7 +4,7 @@ rippleTest
 I found a good simple ripple program (Respect!) written by processing in OpenProcessing Web.  
 Then I converted the processing program into openFrameworks.  
 
-[The processing Code](http://www.openprocessing.org/sketch/81825)
+[The processing code](http://www.openprocessing.org/sketch/81825)
 
 ## Demo
 
