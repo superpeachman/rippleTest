@@ -6,7 +6,7 @@ void ofApp::setup(){
     w = image.width;
     h = image.height;
     pixels = w * h;
-    updatedImage.allocate(w, h, OF_IMAGE_COLOR);//allocate
+    updatedImage.allocate(w, h, OF_IMAGE_COLOR);//allocate 
     
     light.normalize();
     
@@ -24,13 +24,15 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     printf("Framerate: %f \n", ofGetFrameRate());
-    if (ofRandom(1) < 0.3) ripple();   // to RAIN function. Ripple happen automatically.
-    sim();
-    for (int i=0; i<pixels; i++) {
+    if (ofRandom(1) < 0.3) ripple();// Ripple happen automatically.
+    
+    sim();//Spread old ripples.
+    
+    for (int i=0; i<pixels; i++) {//Make each first ripple
         int x = i % w;
         int y = i / w;
         
-        ofVec3f n = ofVec3f(getVal(x - eps, y) - getVal(x + eps, y), getVal(x, y - eps) - getVal(x, y + eps), eps * 2.0);
+        ofVec3f n = ofVec3f(getVal(x - eps, y) - getVal(x + eps, y), getVal(x, y - eps) - getVal(x, y + eps), eps * 2.0);//Check pixels around
         n.normalize();
         float spec = (1 - (light.x + n.x)) + (1 - (light.y + n.y));
         spec /= 2;
@@ -42,8 +44,8 @@ void ofApp::update(){
         
         spec *= 255.0;
         
-        ofColor c = image.getColor(x + n.x * 60, y + n.y * 60);
-        c += spec;
+        ofColor c = image.getColor(x + n.x * 60, y + n.y * 60);//Get "edge" of ripple
+        c += spec;//Make "edge" brighter
         updatedImage.setColor(x, y, c);
     }
     updatedImage.update();
@@ -63,6 +65,7 @@ float ofApp::getVal(int x, int y){
 
 //--------------------------------------------------------------
 void ofApp::sim(){
+    //Store current situation then update.
     for (int i=0; i<pixels; i++) {
         tempV[i] = odata[i];
     }
@@ -73,6 +76,7 @@ void ofApp::sim(){
         ndata[i] = tempV[i];
     }
     
+    //Spread
     for (int i=0; i<pixels; i++) {
         int x = i % w;
         int y = i / w;
@@ -86,6 +90,7 @@ void ofApp::sim(){
 }
 //--------------------------------------------------------------
 void ofApp::ripple(){
+    //Randomly make ripple
     int rx = (int)ofRandom(w - 10) + 5;
     int ry = (int)ofRandom(h - 10) + 5;
     for (int x = -5; x < 5; x++){
@@ -117,6 +122,7 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
+    //Make ripple
     for (int x = -10; x < 10; x++) {
         for (int y = -10; y < 10; y++) {
             int targetPix = (mouseX + x) + (w * (mouseY + y));
@@ -127,7 +133,6 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-    clickFlag = false;
 }
 
 //--------------------------------------------------------------

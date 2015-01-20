@@ -2,7 +2,6 @@
 #include "ofMain.h"
 
 class ofApp : public ofBaseApp{
-
 	public:
 		void setup();
 		void update();
@@ -26,17 +25,14 @@ class ofApp : public ofBaseApp{
         int h;//img height
         int pixels;//Number of pixel
     
-        ofImage image;
-        ofImage updatedImage;
+        ofImage image;//Original image
+        ofImage updatedImage;//Updated image
     
-        vector<float> odata;
-        vector<float> ndata;
-        vector<float> tempV;
+        vector<float> odata;//Old pixel
+        vector<float> ndata;//New pixel
+        vector<float> tempV;//For temp data
 
         float eps = 5.0;
         float z = 0.2;
         ofVec3f light = ofVec3f(1, 1, 0);
-
-        bool clickFlag = false;
-    
 };

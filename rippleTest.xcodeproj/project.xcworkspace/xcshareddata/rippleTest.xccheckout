@@ -6,22 +6,30 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>AD2A8B7C-F123-4384-880C-0F2E630187C5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>rippleTest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>37526DA425E5430474A14FBFA1BC4525160B5FC1</key>
 		<string>https://github.com/kylemcdonald/ofxCv.git</string>
+		<key>A687DE3C5C5A5E83A21DBD39C7291EBB8EF98899</key>
+		<string>https://github.com/superpeachman/rippleTest.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>rippleTest.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>37526DA425E5430474A14FBFA1BC4525160B5FC1</key>
-		<string>ofxCv/</string>
+		<string>../../../../../addons/ofxCv</string>
+		<key>A687DE3C5C5A5E83A21DBD39C7291EBB8EF98899</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/kylemcdonald/ofxCv.git</string>
+	<string>https://github.com/superpeachman/rippleTest.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>37526DA425E5430474A14FBFA1BC4525160B5FC1</string>
+	<string>A687DE3C5C5A5E83A21DBD39C7291EBB8EF98899</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -31,6 +39,14 @@
 			<string>37526DA425E5430474A14FBFA1BC4525160B5FC1</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ofxCv</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A687DE3C5C5A5E83A21DBD39C7291EBB8EF98899</string>
+			<key>IDESourceControlWCCName</key>
+			<string>rippleTest</string>
 		</dict>
 	</array>
 </dict>
